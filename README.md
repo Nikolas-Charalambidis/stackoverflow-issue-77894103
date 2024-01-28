@@ -6,8 +6,8 @@ Switch between Java 8 and 17 and compare the test results.
 
 - Java 8
     ```xml
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     ```
 - Java 17
     ```xml
