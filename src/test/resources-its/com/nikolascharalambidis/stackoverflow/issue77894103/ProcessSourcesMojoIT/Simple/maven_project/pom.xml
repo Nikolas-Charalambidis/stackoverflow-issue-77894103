@@ -1,0 +1,71 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="
+         http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nikolas-charalambidis.dejunkify</groupId>
+    <artifactId>dejunkify-maven-plugin-test-simple</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.example</groupId>
+                <artifactId>stackoverflow-77894103</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process-sources</goal>
+                        </goals>
+                        <configuration>
+                            <refinements>
+                                <refinement>
+                                    <id>base</id>
+                                    <package>foo.bar</package>
+
+                                    <filter>
+                                        <class>*Instruction</class>
+                                        <subtypeOf>foo.bar.Entity</subtypeOf>
+                                        <field>sad</field>
+                                        <method>foo</method>
+                                        <parameter>sss</parameter>
+                                    </filter>
+
+                                    <implementInterface>foo.bar.Zentity</implementInterface>
+                                    <extendClass>goo.far.Gentity</extendClass>
+
+                                    <removeImports>com.unused</removeImports>
+                                    <removeStaticImports>com.unused</removeStaticImports>
+
+                                    <removeFields>foo</removeFields>
+                                    <removeStaticFields>foo</removeStaticFields>
+                                    <removeSerialVersionUUID/>
+
+                                    <removeMethods>getFoo(String)</removeMethods>
+                                    <removeStaticMethods>getFoo(String)</removeStaticMethods>
+                                    <removeHashCode/>
+                                    <removeEquals/>
+
+                                    <removeConstructors>Foo(String, String)</removeConstructors>
+
+                                    <removeNestedClasses>Foo</removeNestedClasses>
+                                    <removeStaticNestedClasses>Foo</removeStaticNestedClasses>
+
+                                    <removeAnnotations>javax.annotation.Generated</removeAnnotations>
+                                    <removeFieldAnnotations>javax.annotation.Generated</removeFieldAnnotations>
+                                    <removeClassAnnotations>javax.annotation.Generated</removeClassAnnotations>
+                                    <removeMethodAnnotations>javax.annotation.Generated</removeMethodAnnotations>
+                                    <removeParameterAnnotations>javax.annotation.Generated</removeParameterAnnotations>
+                                </refinement>
+                            </refinements>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
