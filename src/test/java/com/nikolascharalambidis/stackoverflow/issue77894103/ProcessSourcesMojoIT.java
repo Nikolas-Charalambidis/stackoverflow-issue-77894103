@@ -1,4 +1,4 @@
-package com.nikolascharalambidis.stackoverflow;
+package com.nikolascharalambidis.stackoverflow.issue77894103;
 
 
 import com.soebes.itf.jupiter.extension.MavenCLIOptions;

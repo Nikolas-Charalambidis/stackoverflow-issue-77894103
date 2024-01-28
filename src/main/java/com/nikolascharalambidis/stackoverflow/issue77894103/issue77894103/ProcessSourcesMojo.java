@@ -1,4 +1,4 @@
-package com.nikolascharalambidis.stackoverflow;
+package com.nikolascharalambidis.stackoverflow.issue77894103.issue77894103;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -9,8 +9,7 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.codehaus.plexus.PlexusContainer;
 
-import com.google.inject.Inject;
-import com.nikolascharalambidis.stackoverflow.components.MyComponent;
+import com.nikolascharalambidis.stackoverflow.issue77894103.issue77894103.components.MyComponent;
 
 
 @Mojo(
