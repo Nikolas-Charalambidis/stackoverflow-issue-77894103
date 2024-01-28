@@ -17,7 +17,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Dependencies -->
-        <maven.version>3.5.4</maven.version>
+        <minimum.maven.version>3.5.4</minimum.maven.version>
         <aether.version>1.1.0</aether.version>
         <plexus-utils.version>4.0.0</plexus-utils.version>
         <plexus-xml.version>4.0.3</plexus-xml.version>
@@ -35,42 +35,41 @@
         <maven-compiler-plugin.version>3.12.1</maven-compiler-plugin.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.10.0</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!-- Maven -->
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-artifact</artifactId>
-            <version>${maven.version}</version>
+            <version>${minimum.maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>${maven.version}</version>
+            <version>${minimum.maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
-            <version>${maven.version}</version>
+            <version>${minimum.maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-model</artifactId>
-            <version>${maven.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-model-builder</artifactId>
-            <version>${maven.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-settings</artifactId>
-            <version>${maven.version}</version>
+            <version>${minimum.maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -78,17 +77,6 @@
             <artifactId>maven-plugin-annotations</artifactId>
             <version>${maven-plugin-annotations.version}</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.aether</groupId>
-            <artifactId>aether-api</artifactId>
-            <version>${aether.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.aether</groupId>
-            <artifactId>aether-util</artifactId>
-            <version>${aether.version}</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.sisu</groupId>
@@ -130,32 +118,28 @@
         </dependency>
 
         <!-- Tools: Provided -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
-
         <!-- Test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.soebes.itf.jupiter.extension</groupId>
             <artifactId>itf-jupiter-extension</artifactId>
             <version>${itf.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.soebes.itf.jupiter.extension</groupId>
             <artifactId>itf-assertj</artifactId>
             <version>${itf.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

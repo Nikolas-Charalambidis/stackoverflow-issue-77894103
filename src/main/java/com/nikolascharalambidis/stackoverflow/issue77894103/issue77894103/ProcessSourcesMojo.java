@@ -23,9 +23,15 @@ public class ProcessSourcesMojo extends AbstractMojo {
     @Component
     private PlexusContainer container;
 
+    @Component
+    private MyComponent myComponent;
+
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
         final boolean result = container.hasComponent(MyComponent.class, "myComponent");
+        String name = myComponent.getClass().getName();
+
         getLog().info("### " + result);
+        getLog().info("### name:" + name);
     }
 }
