@@ -10,7 +10,6 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.codehaus.plexus.PlexusContainer;
 
 import com.nikolascharalambidis.stackoverflow.issue77894103.issue77894103.components.MyComponent;
-import org.codehaus.plexus.component.annotations.Requirement;
 
 
 @Mojo(

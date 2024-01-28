@@ -17,7 +17,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 
 @MavenJupiterExtension
-public class ProcessSourcesMojoIT {
+class ProcessSourcesMojoIT {
 
     @Nested
     @MavenProject
