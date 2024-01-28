@@ -21,15 +21,17 @@ public class ProcessSourcesMojoIT {
 
     @Nested
     @MavenProject
-    @TestMethodOrder( MethodOrderer.OrderAnnotation.class )
     @MavenOption(MavenCLIOptions.NON_RECURSIVE)
+    @MavenOption(MavenCLIOptions.VERBOSE)
+//    @MavenOption(MavenCLIOptions.SHOW_VERSION)
+    @MavenOption(MavenCLIOptions.BATCH_MODE)
     @MavenGoal("process-sources")
     class Simple {
 
         @MavenTest
         void success(MavenExecutionResult result) {
             assertThat(result).isSuccessful();
-            assertThat(result).out().plain().contains("[INFO] ### true");
+            assertThat(result).out().info().contains("### true");
         }
     }
 }
